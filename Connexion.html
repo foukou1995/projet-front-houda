@@ -123,6 +123,7 @@
                     console.log(response);
                     // Stocker uniquement l'e-mail dans le localStorage
                     localStorage.setItem('userEmail', loginData.email);
+                    localStorage.setItem('password', loginData.password);
                     localStorage.setItem('loggedIn', true);// Marquer comme connecté
                     window.location.href = 'Flotte.html';  // Rediriger vers la page Flotte
                 },

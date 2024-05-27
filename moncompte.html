@@ -114,6 +114,7 @@
   </div>
 </footer>
 
+
 <script>
   $(document).ready(function () {
     // Vérifier si l'utilisateur est connecté
@@ -172,15 +173,52 @@
       alert('Aucune information utilisateur n\'est disponible.');
     }
 
-    // Évitez l'envoi du formulaire pour l'instant
+    // Éviter l'envoi du formulaire pour l'instant
     $('#profileForm').submit(function (event) {
       event.preventDefault();
-      // Mettez en œuvre la logique de mise à jour du profil ici
-      alert('La mise à jour du profil est en cours de développement.');
+      // Récupérer les valeurs des champs
+      var lastName = $('#nom').val();
+      var firstName = $('#prenom').val();
+      var telephone = $('#telephone').val();
+      var email = $('#email').val();
+      var adresse = $('#adresse').val();
+      var typePermis = $('#type_permis').val();
+      var identifiantPermis = $('#identifiant_permis').val();
+      var dateDelivrance = $('#date_delivrance').val();
+      var password = localStorage.getItem('password'); // Récupérer le mot de passe depuis le localStorage
+
+      // Créer l'objet à envoyer dans la requête POST
+      var userData = {
+        last_name: lastName,
+        first_name: firstName,
+        email: email,
+        phone: telephone,
+        number_licence: identifiantPermis,
+        expiry_date_licence: dateDelivrance,
+        date_birth: dateDelivrance,
+        password: password,
+        role: 'client' // Supposons que le rôle est toujours 'client'
+      };
+
+      // Envoyer la requête POST pour mettre à jour les informations utilisateur
+      $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8090/api/v1/register_customers',
+        data: JSON.stringify(userData),
+        contentType: 'application/json',
+        success: function (response) {
+          alert('Informations utilisateur mises à jour avec succès !');
+          console.log(response);
+        },
+        error: function (error) {
+          alert('Erreur lors de la mise à jour des informations utilisateur.');
+          console.log(error);
+        }
+      });
     });
   });
-
 </script>
+
 
 
 </body>

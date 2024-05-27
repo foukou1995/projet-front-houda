@@ -59,23 +59,34 @@
         <form method="post" id="form-r">
             <h3>Réserver une voiture</h3>
 
-            <label for="cars">Choisir une voiture:</label><br>
-
+            <label for="cars">Choisir une voiture :</label><br>
             <select name="car" id="car">
-
+                <!-- Options de voiture à remplir dynamiquement -->
             </select>
             <br><br>
 
-            <label for="date_debut">Date début:</label><br>
+            <label for="date_debut">Date début :</label><br>
             <input type="date" id="date_debut" name="date_debut"><br><br>
 
-            <label for="date_fin">Date fin:</label><br>
+            <label for="date_fin">Date fin :</label><br>
             <input type="date" id="date_fin" name="date_fin"><br><br>
+ls
+            <label for="year">Année :</label><br>
+            <input type="text" id="year" name="year"><br><br>
 
+            <label for="rental_cost_per_day">Coût de location par jour :</label><br>
+            <input type="text" id="rental_cost_per_day" name="rental_cost_per_day"><br><br>
+
+            <label for="available">Disponible :</label><br>
+            <input type="checkbox" id="available" name="available"><br><br>
+
+            <label for="location">Emplacement :</label><br>
+            <input type="text" id="location" name="location"><br><br>
 
             <input type="submit" value="Reserver" id="r-btn">
         </form>
     </div>
+
 </div>
 
 
