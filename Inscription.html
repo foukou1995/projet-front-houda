@@ -1,0 +1,242 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <script src="Js\jquery-3.7.1.min.js"></script>-->
+<!--    <link rel="stylesheet" href="Styles\Inscription.css">-->
+<!--    <link rel="stylesheet" href="Styles\bootstrap\css\bootstrap.css">-->
+<!--    <script src="Styles\bootstrap\js\jquery-3.7.1.min.js"></script>-->
+<!--    <script src="Styles\bootstrap\js\bootstrap.js"></script>-->
+<!--    <script src="/Js/Flotte.js"></script>-->
+<!--    <title>Inscription</title>-->
+<!--    <link rel="icon" type="image/x-icon" href="Img\Logo.png">-->
+<!--</head>-->
+
+<!--<body>-->
+<!--    <nav class="navbar bg-body-tertiary">-->
+<!--        <div class="container-fluid">-->
+<!--            <a class="navbar-brand" href="Index.html">-->
+<!--                <img src="Img\Logo.png" alt="Bootstrap" width="90" height="40">-->
+<!--              </a>-->
+<!--            <ul class="nav justify-content-end">-->
+<!--                -->
+<!--                <li class="nav-item">-->
+<!--                    <button type="button" class="btn btn-light" ><a href="Connexion.html" style="text-decoration: none; color: inherit;">Se connecter</a></button>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </nav>-->
+
+
+<!--<div class="container-0">-->
+<!--    <div class="centered">-->
+<!--        <h1 style="align-items: center;">Inscription</h1>-->
+<!--        <form>-->
+<!--            <div class="container p-0 m-0">-->
+<!--                <div class="row">-->
+<!--                    <div class="col">-->
+<!--                        <label for="lname">Nom:</label><br>-->
+<!--                        <input type="text" id="lname" name="lname"><br>-->
+<!--                    </div>-->
+<!--                    <div class="col">-->
+<!--                        <label for="fname">Prénom:</label><br>-->
+<!--                        <input type="text" id="fname" name="fname"><br>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="container p-0 m-0">-->
+<!--                <div class="row">-->
+<!--                    <div class="col">-->
+<!--                        <label for="pw">Mot de passe:</label><br>-->
+<!--                        <input type="password" id="pw" name="pw"><br>-->
+<!--                    </div>-->
+<!--                    <div class="col">-->
+
+<!--                        <label for="pwr">Répéter mot de passe:</label><br>-->
+<!--                        <input type="password" id="pwr" name="pwr"><br>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+<!--            <div class="container p-0 m-0">-->
+<!--                <div class="row">-->
+<!--                    <div class="col">-->
+<!--                        <label for="email">Email:</label><br>-->
+<!--                        <input type="email" id="email" name="email"><br>-->
+<!--                    </div>-->
+<!--                    <div class="col">-->
+
+<!--                        <label for="bday">Date de naissance:</label><br>-->
+<!--                        <input type="date" id="bday" name="bday"><br>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+<!--            <div class="container p-0 m-0">-->
+<!--                <div class="row">-->
+<!--                    <div class="col">-->
+<!--                        <label for="Npermis">Permis:</label><br>-->
+<!--                        <input type="number" id="Npermis" name="Npermis"><br>-->
+<!--                    </div>-->
+<!--                    <div class="col p-0 mr-0">-->
+<!--                        <label for="Dpermis">Date déliverance du permis:</label><br>-->
+<!--                        <input type="date" id="Dpermis" name="Dpermis">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--<br>-->
+
+<!--            <div style="text-align: center;">-->
+<!--            <input type="submit" value="Inscrire" style="margin-top: 1em;">-->
+<!--        </div>-->
+<!--        </form>-->
+<!--    </div>-->
+
+<!--</div>-->
+<!--</body>-->
+
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="Styles/Inscription.css">
+    <link rel="stylesheet" href="Styles/bootstrap/css/bootstrap.css">
+    <title>Inscription</title>
+    <link rel="icon" type="image/x-icon" href="Img/Logo.png">
+</head>
+
+<body>
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="Index.html">
+            <img src="Img/Logo.png" alt="Bootstrap" width="90" height="40">
+        </a>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <button type="button" class="btn btn-light"><a href="Connexion.html" style="text-decoration: none; color: inherit;">Se connecter</a></button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-0">
+    <div class="centered">
+        <h1 style="align-items: center;">Inscription</h1>
+        <form id="registrationForm">
+            <div class="container p-0 m-0">
+                <div class="row">
+                    <div class="col">
+                        <label for="lname">Nom:</label><br>
+                        <input type="text" id="lname" name="lname"><br>
+                    </div>
+                    <div class="col">
+                        <label for="fname">Prénom:</label><br>
+                        <input type="text" id="fname" name="fname"><br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container p-0 m-0">
+                <div class="row">
+                    <div class="col">
+                        <label for="pw">Mot de passe:</label><br>
+                        <input type="password" id="pw" name="pw"><br>
+                    </div>
+                    <div class="col">
+                        <label for="pwr">Répéter mot de passe:</label><br>
+                        <input type="password" id="pwr" name="pwr"><br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container p-0 m-0">
+                <div class="row">
+                    <div class="col">
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email"><br>
+                    </div>
+                    <div class="col">
+                        <label for="bday">Date de naissance:</label><br>
+                        <input type="date" id="bday" name="bday"><br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container p-0 m-0">
+                <div class="row">
+                    <div class="col">
+                        <label for="Npermis">Permis:</label><br>
+                        <input type="string" id="Npermis" name="Npermis"><br>
+                    </div>
+                    <div class="col p-0 mr-0">
+                        <label for="Dpermis">Date délivrance du permis:</label><br>
+                        <input type="date" id="Dpermis" name="Dpermis">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <input type="submit" value="Inscrire" style="margin-top: 1em;">
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        console.log("Document ready");
+
+
+        $('#registrationForm')[0].reset();
+
+        $('#registrationForm').submit(function (event) {
+            event.preventDefault();
+            console.log("Form submitted");
+
+            var formData = {
+                last_name: $('#lname').val(),
+                first_name: $('#fname').val(),
+                email: $('#email').val(),
+                password: $('#pw').val(),
+                date_birth: $('#bday').val(),
+                number_licence: $('#Npermis').val(),
+                expiry_date_licence: $('#Dpermis').val(),
+                role:"client",
+                phone:"0555555",
+            };
+
+            console.log(formData);
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8090/api/v1/register_customers',
+                data: JSON.stringify(formData),
+                contentType: 'application/json',
+                success: function (response) {
+                    alert('Inscription réussie!');
+                    console.log(response);
+                    $('#registrationForm')[0].reset();
+                    window.location.href = 'Connexion.html';  // Rediriger vers la page de connexion
+                },
+                error: function (error) {
+                    alert('Erreur lors de l\'inscription.');
+                    console.log(error);
+                    $('#registrationForm')[0].reset();
+                }
+            });
+        });
+    });
+</script>
+</body>
+
+</html>

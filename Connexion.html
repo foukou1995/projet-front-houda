@@ -1,0 +1,140 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <script src="Js\jquery-3.7.1.min.js"></script>-->
+<!--    <link rel="stylesheet" href="Styles\Inscription.css">-->
+<!--    <link rel="stylesheet" href="Styles\bootstrap\css\bootstrap.css">-->
+<!--    <script src="Styles\bootstrap\js\jquery-3.7.1.min.js"></script>-->
+<!--    <script src="Styles\bootstrap\js\bootstrap.js"></script>-->
+<!--    <script src="/Js/Flotte.js"></script>-->
+<!--    <title>Connection</title>-->
+<!--    <link rel="icon" type="image/x-icon" href="Img\Logo.png">-->
+
+<!--</head>-->
+
+<!--<body>-->
+<!--    <nav class="navbar bg-body-tertiary">-->
+<!--        <div class="container-fluid">-->
+<!--            <a class="navbar-brand" href="Index.html">-->
+<!--                <img src="Img\Logo.png" alt="Bootstrap" width="90" height="40">-->
+<!--              </a>-->
+<!--            <ul class="nav justify-content-end">-->
+<!--                -->
+<!--                <li class="nav-item">-->
+<!--                    <button type="button" class="btn btn-light" ><a href="Inscription.html" style="text-decoration: none; color: inherit;">S'inscrire</a></button>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </nav>-->
+
+
+
+<!--<div class="container-0">-->
+<!--    <div class="centered">-->
+<!--        <h1 style="align-items: center;">Connection</h1>-->
+
+
+<!--        <form>-->
+
+<!--            <label for="mail">Email:</label><br>-->
+<!--            <input type="text" id="mail" name="mail"><br>-->
+
+<!--            <label for="pw">Mot de passe:</label><br>-->
+<!--            <input type="text" id="pw" name="pw"><br>-->
+
+
+<!--            <div style="text-align: center;">-->
+<!--                <input type="submit" value="Inscrire" style="margin-top: 1em;">-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="Styles/Inscription.css">
+    <link rel="stylesheet" href="Styles/bootstrap/css/bootstrap.css">
+    <script src="Styles/bootstrap/js/jquery-3.7.1.min.js"></script>
+    <script src="Styles/bootstrap/js/bootstrap.js"></script>
+    <script src="/Js/Flotte.js"></script>
+    <title>Connection</title>
+    <link rel="icon" type="image/x-icon" href="Img/Logo.png">
+</head>
+
+<body>
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="Index.html">
+            <img src="Img/Logo.png" alt="Bootstrap" width="90" height="40">
+        </a>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <button type="button" class="btn btn-light"><a href="Inscription.html" style="text-decoration: none; color: inherit;">S'inscrire</a></button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-0">
+    <div class="centered">
+        <h1 style="align-items: center;">Connexion</h1>
+        <form id="loginForm">
+            <label for="mail">Email:</label><br>
+            <input type="text" id="mail" name="mail"><br>
+            <label for="pw">Mot de passe:</label><br>
+            <input type="password" id="pw" name="pw"><br>
+            <div style="text-align: center;">
+                <input type="submit" value="Se connecter" style="margin-top: 1em;">
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#loginForm').submit(function (event) {
+            event.preventDefault();
+            console.log("Form submitted");
+
+            var loginData = {
+                email: $('#mail').val(),
+                password: $('#pw').val()
+            };
+
+            console.log(loginData);
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8090/api/v1/login',
+                data: JSON.stringify(loginData),
+                contentType: 'application/json',
+                success: function (response) {
+                    alert('Connexion réussie!');
+                    console.log(response);
+                    // Stocker uniquement l'e-mail dans le localStorage
+                    localStorage.setItem('userEmail', loginData.email);
+                    localStorage.setItem('loggedIn', true);// Marquer comme connecté
+                    window.location.href = 'Flotte.html';  // Rediriger vers la page Flotte
+                },
+                error: function (error) {
+                    alert('Erreur lors de la connexion. Veuillez vérifier vos identifiants.');
+                    console.log(error);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+
+</html>

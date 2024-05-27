@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="Js/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="Styles/Accueil.css">
+  <link rel="stylesheet" href="Styles/compte.css">
+  <link rel="stylesheet" href="Styles/bootstrap/css/bootstrap.css">
+  <script src="Styles/bootstrap/js/jquery-3.7.1.min.js"></script>
+  <script src="Styles/bootstrap/js/bootstrap.js"></script>
+
+  <title>Moncompte</title>
+  <link rel="icon" type="image/x-icon" href="Img/Logo.png">
+</head>
+
+<body>
+<nav class="navbar fixed-top" style="background-color: aliceblue">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="Index.html">
+      <img src="Img/Logo.png" alt="Bootstrap" width="90" height="40">
+    </a>
+    <ul class="nav justify-content-start">
+      <li class="nav-item">
+        <a href="Flotte.html" style="text-decoration: none; color: #124E73; font-weight: 600;">FLOTTE</a>
+      </li>
+    </ul>
+    <ul class="nav justify-content-end">
+      <!-- Bouton Profil (initialement masqué) -->
+      <li class="nav-item" id="btn-profile" style="display: none;">
+        <button type="button" class="btn btn-dark m-1">
+          <a href="Profil.html" style="text-decoration: none; color: inherit;">Profil</a>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-dark m-1" id="btn-login">
+          <a href="Connexion.html" style="text-decoration: none; color: inherit;">Se connecter</a>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-dark m-1" id="btn-logout">
+          <a href="Index.html" style="text-decoration: none; color: inherit;">Se déconnecter</a>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-light m-1">
+          <a href="Inscription.html" style="text-decoration: none; color: inherit;">S'inscrire</a>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="entete">
+  <h1 class="titleimg">Mon Compte </h1>
+</div>
+
+<div class="container mt-5"> <!-- Espacement en haut -->
+  <div class="row justify-content-center"> <!-- Centrage horizontal -->
+    <div class="col-md-6"> <!-- Taille moyenne pour le formulaire -->
+      <div class="formulaire-wrap">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="row d-flex justify-content-center">
+            <img src="Img/iconcompte.png" class="tailleimg">
+          </div>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="nom">Nom:</label>
+            <input type="text" class="form-control" id="nom">
+          </div>
+          <div class="form-group">
+            <label for="prenom">Prénom:</label>
+            <input type="text" class="form-control" id="prenom">
+          </div>
+          <div class="form-group">
+            <label for="telephone">Numéro de téléphone:</label>
+            <input type="tel" class="form-control" id="telephone">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="adresse">Adresse:</label>
+            <input type="text" class="form-control" id="adresse">
+          </div>
+          <div class="form-group">
+            <label for="type_permis">Type de permis:</label>
+            <input type="text" class="form-control" id="type_permis">
+          </div>
+          <div class="form-group">
+            <label for="identifiant_permis">Identifiant du permis:</label>
+            <input type="text" class="form-control" id="identifiant_permis">
+          </div>
+          <div class="form-group">
+            <label for="date_delivrance">Date de délivrance du permis:</label>
+            <input type="date" class="form-control" id="date_delivrance">
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Modifier</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer style="background-color:rgb(12, 12, 104);height: 26em;">
+  <div style="background-color:rgb(6, 6, 57);height: 26em;">
+    <div class="container test-md-left" style="color: white;">
+      <!-- Contenu du footer -->
+    </div>
+  </div>
+</footer>
+
+<script>
+  $(document).ready(function () {
+    // Vérifier si l'utilisateur est connecté
+    var isLoggedIn = localStorage.getItem('loggedIn');
+
+    if (isLoggedIn) {
+      // Si l'utilisateur est connecté, afficher le bouton de déconnexion et masquer le bouton de connexion
+      $('#btn-login').hide();
+      $('#btn-logout').show();
+    } else {
+      // Si l'utilisateur n'est pas connecté, afficher le bouton de connexion et masquer le bouton de déconnexion
+      $('#btn-logout').hide();
+      $('#btn-login').show();
+    }
+
+    // Récupérer l'e-mail de l'utilisateur connecté depuis le localStorage
+    var userEmail = localStorage.getItem('userEmail');
+
+    // Vérifier si l'e-mail existe dans le localStorage
+    if (userEmail) {
+      // Envoyer une requête pour récupérer toutes les informations des utilisateurs
+      $.ajax({
+        type: 'GET',
+        url: 'http://localhost:8090/api/v1/customers',
+        success: function (response) {
+          if (response && response.length > 0) {
+            // Filtrer les informations de l'utilisateur connecté en fonction de son e-mail
+            var userData = response.find(function (user) {
+              return user.email === userEmail;
+            });
+
+            // Vérifier si l'utilisateur a été trouvé
+            if (userData) {
+              // Remplir les champs du formulaire avec les informations récupérées
+              $('#nom').val(userData.last_name);
+              $('#prenom').val(userData.first_name);
+              $('#telephone').val(userData.phone);
+              $('#email').val(userData.email);
+              $('#adresse').val(userData.address);
+              $('#type_permis').val(userData.type_permis);
+              $('#identifiant_permis').val(userData.number_licence);
+              $('#date_delivrance').val(userData.date_delivrance);
+            } else {
+              alert('Aucune donnée utilisateur trouvée pour cet e-mail.');
+            }
+          } else {
+            alert('Aucune donnée utilisateur trouvée.');
+          }
+        },
+        error: function (error) {
+          alert('Erreur lors de la récupération des données utilisateur.');
+          console.log(error);
+        }
+      });
+    } else {
+      alert('Aucune information utilisateur n\'est disponible.');
+    }
+
+    // Évitez l'envoi du formulaire pour l'instant
+    $('#profileForm').submit(function (event) {
+      event.preventDefault();
+      // Mettez en œuvre la logique de mise à jour du profil ici
+      alert('La mise à jour du profil est en cours de développement.');
+    });
+  });
+
+</script>
+
+
+</body>
+
+</html>

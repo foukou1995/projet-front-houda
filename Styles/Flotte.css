@@ -1,0 +1,335 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Phone */
+@media (min-width: 320px) and (max-width: 555px) {
+
+
+    .background {
+
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Img/bg-flotte.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 10%;
+        padding-left: 13%;
+        padding-right: 15%;
+        padding-bottom: 16%;
+    }
+
+    .background div {
+        text-align: center;
+    }
+
+    .background div button {
+        margin: 2%;
+        width: 18rem;
+    }
+
+    .text1 {
+        color: white;
+        font-weight: 700;
+        font-size: 2.1em;
+        padding-top: 30%;
+        text-align: left;
+    }
+
+    .text2 {
+        color: white;
+        text-align: left;
+    }
+
+    .text3 {
+        font-weight: 700;
+        text-align: center;
+        color: #124E73;
+        padding-bottom: 3%;
+    }
+
+    .car1 {
+        display: none;
+
+    }
+
+    .flotte {
+        margin-top: 5%;
+        margin-left: 5%;
+        color: #124E73;
+    }
+
+    .flotte h1 {
+        text-align: center;
+        color: #124E73;
+        font-size: 2.2rem;
+    }
+
+    .flotte h3{
+        font-size: 1.7em;
+    }
+
+    .flotte .container .row .col .card{
+        width: 11.0rem;
+        margin-top: 4%;
+    }
+
+    .flotte .container .row .col {
+        /* width: 10rem; */
+        padding-right: 0%;
+        padding-left: 0%;
+        margin-right: 0%;
+        margin-left: 0%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .car2 h1,
+    .car2 h2,
+    .car2 h3,
+    .car2 h4,
+    .car2 h5 {
+        color: #124E73;
+    }
+
+    .indivcar {
+        margin: 2%;
+        text-align: left;
+        width: 1em;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        color: #124E73;
+        flex-wrap: wrap;
+    }
+
+    #flip1,
+    #flip2,
+    #flip3 {
+        margin-left: 5%;
+        text-align: left;
+        color: #124E73;
+        cursor: pointer;
+    }
+
+    #panel1,
+    #panel2,
+    #panel3 {
+        margin-left: 5%;
+        text-align: left;
+        color: #124E73;
+    }
+
+
+
+}
+
+/* Tablet */
+@media (min-width: 556px) and (max-width: 991px) {
+
+
+    .background {
+
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Img/bg-flotte.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-left: 13%;
+        padding-right: 15%;
+        padding-bottom: 16%;
+    }
+
+    .flotte .container .row .col {
+        margin-top: 4%;
+    }
+
+    .flotte .container .row .col .card{
+        width: 13rem;
+    }
+
+
+    .text1 {
+
+        color: white;
+        font-weight: 700;
+        font-size: 3.0em;
+        padding-top: 18%;
+        text-align: left;
+    }
+
+    .text2 {
+        color: white;
+        text-align: left;
+    }
+
+    .text3 {
+        font-weight: 700;
+        text-align: center;
+        color: #124E73;
+        padding-bottom: 3%;
+    }
+
+    .car1 {
+        color: #124E73;
+        margin-right: 12%;
+        margin-left: 12%;
+        margin-top: 4%;
+
+    }
+
+    .flotte {
+        margin-top: 5%;
+        margin-left: 5%;
+        color: #124E73;
+    }
+
+    .flotte h1 {
+        text-align: center;
+        color: #124E73;
+    }
+
+    .car2 h1,
+    .car2 h2,
+    .car2 h3,
+    .car2 h4,
+    .car2 h5 {
+        color: #124E73;
+    }
+
+    .indivcar {
+        margin: 2%;
+        text-align: left;
+        width: 1em;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        color: #124E73;
+        flex-wrap: wrap;
+    }
+
+    #flip1,
+    #flip2,
+    #flip3 {
+        margin-left: 5%;
+        text-align: left;
+        color: #124E73;
+        cursor: pointer;
+    }
+
+    #panel1,
+    #panel2,
+    #panel3 {
+        margin-left: 5%;
+        text-align: left;
+        color: #124E73;
+    }
+
+
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+
+    .background {
+
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Img/bg-flotte.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-left: 13%;
+        padding-right: 15%;
+        padding-bottom: 16%;
+    }
+
+    .text1 {
+
+        color: white;
+        font-weight: 700;
+        font-size: 3.5em;
+        padding-top: 10%;
+        text-align: left;
+    }
+
+    .text2 {
+        color: white;
+        text-align: left;
+    }
+
+    .text3 {
+        font-weight: 700;
+        text-align: center;
+        color: #124E73;
+        padding-bottom: 3%;
+    }
+
+    .car1 {
+        color: #124E73;
+        margin-right: 12%;
+        margin-left: 12%;
+        margin-top: 4%;
+
+    }
+
+    .flotte {
+        margin-top: 5%;
+        margin-left: 5%;
+        color: #124E73;
+    }
+
+    .flotte .container .row .col {
+        margin-top: 3%;
+    }
+
+    .flotte h1 {
+        text-align: center;
+        color: #124E73;
+    }
+
+    .flotte .container .row .col .card{
+        width: 15rem;
+    }
+
+    .car2 h1,
+    .car2 h2,
+    .car2 h3,
+    .car2 h4,
+    .car2 h5 {
+        color: #124E73;
+    }
+
+    .indivcar {
+        margin: 2%;
+        text-align: left;
+        width: 1em;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        color: #124E73;
+        flex-wrap: wrap;
+    }
+
+    #flip1,
+    #flip2,
+    #flip3 {
+        margin-left: 5%;
+        text-align: left;
+        color: #124E73;
+        cursor: pointer;
+    }
+
+    #panel1,
+    #panel2,
+    #panel3 {
+        margin-left: 5%;
+        text-align: left;
+        color: #124E73;
+    }
+}
